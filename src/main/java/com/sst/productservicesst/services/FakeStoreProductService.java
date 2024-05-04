@@ -17,18 +17,18 @@ public class FakeStoreProductService implements ProductService {
     @Override
     public Product getProductById(Long id) {
         ////Call the FakeStore API to get the product with give id.
-        throw new RuntimeException("Something went Wrong");
-//        RestTemplate restTemplate = new RestTemplate();
-//        FakeStoreProductDto fakeStoreProductDto =
-//                restTemplate.getForObject("https://fakestoreapi.com/products/" + id,
-//                        FakeStoreProductDto.class);
-//
-//        if (fakeStoreProductDto == null) {
-//            return null;
-//        }
-//
-//        //convert FakeStoreProductDto object to Product object.
-//        return convertFakeStoreProductDtoToProduct(fakeStoreProductDto);
+        int x = 1/0;
+        RestTemplate restTemplate = new RestTemplate();
+        FakeStoreProductDto fakeStoreProductDto =
+                restTemplate.getForObject("https://fakestoreapi.com/products/" + id,
+                        FakeStoreProductDto.class);
+
+        if (fakeStoreProductDto == null) {
+            return null;
+        }
+
+        //convert FakeStoreProductDto object to Product object.
+        return convertFakeStoreProductDtoToProduct(fakeStoreProductDto);
     }
 
     public List<Product> getAllProducts() {
